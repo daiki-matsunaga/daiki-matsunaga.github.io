@@ -1,217 +1,223 @@
 html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video {
-border:0;
-font:inherit;
-font-size:100%;
-margin:0;
-padding:0;
-vertical-align:baseline;
+  border:0;
+  font:inherit;
+  font-size:100%;
+  margin:0;
+  padding:0;
+  vertical-align:baseline;
 }
 
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
-display:block;
+  display:block;
 }
 
 html, body {
-    background: #232c31;
-    font-family: 'Slabo 27px', helvetica, arial, sans-serif;
-    font-size: 16px;
-    color: #222;
+  background: #232c31;
+  font-family: 'Slabo 27px', helvetica, arial, sans-serif;
+  font-size: 16px;
+  color: #222;
 }
 
 .clear {clear: both;}
 
 p {
-	font-size: 1em;
-	line-height: 1.4em;
-	margin-bottom: 20px;
-	color: #444;
+  font-size: 1em;
+  line-height: 1.4em;
+  margin-bottom: 20px;
+  color: #444;
 }
 
 #cv {
-	width: 90%;
-	max-width: 800px;
-	background: #f0f0ee;
-	margin: 30px auto;
-    background-size: 120px 120px;
-    background-image: url("../image/pattern.png")
+  width: 90%;
+  max-width: 800px;
+  background: #f0f0ee;
+  margin: 30px auto;
+  background-size: 120px 120px;
+  background-image: url("../image/pattern.png")
 }
 
 .mainDetails {
-	padding: 25px 35px;
-	border-bottom: 2px solid #307499;
-	background: #ddd;
+  padding: 25px 35px;
+  border-bottom: 2px solid #307499;
+  background: #ddd;
 }
 
 #name h1 {
-	font-size: 2.0em;
-	font-weight: 700;
-	font-family: 'Source Serif Pro', Helvetica, Arial, sans-serif;
-	margin-bottom: -6px;
+  font-size: 2.0em;
+  font-weight: 700;
+  font-family: 'Source Serif Pro', Helvetica, Arial, sans-serif;
+  margin-bottom: -6px;
 }
 
 #name h2 {
-	font-size: 1.5em;
-	margin-left: 2px;
-	font-family: 'Source Serif Pro', Helvetica, Arial, sans-serif;
+  font-size: 1.5em;
+  margin-left: 2px;
+  font-family: 'Source Serif Pro', Helvetica, Arial, sans-serif;
 }
 
 #mainArea {
-	padding: 0 40px;
+  padding: 0 40px;
 }
 
 #headshot {
-	width: 12.5%;
-	float: left;
-	margin-right: 30px;
+  width: 12.5%;
+  float: left;
+  margin-right: 30px;
 }
 
 #headshot img {
-	width: 100%;
-	height: auto;
-	-webkit-border-radius: 50px;
-	border-radius: 50px;
+  width: 100%;
+  height: auto;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
 }
 
 #name {
-	float: left;
+  float: left;
 }
 
 #contactDetails {
-	float: right;
+  float: right;
 }
 
 #contactDetails ul {
-	list-style-type: none;
-	font-size: 0.9em;
-	margin-top: 2px;
+  list-style-type: none;
+  font-size: 0.9em;
+  margin-top: 2px;
 }
 
 #contactDetails ul li {
-	margin-bottom: 3px;
-	color: #444;
+  margin-bottom: 3px;
+  color: #444;
 }
 
 a {
-    text-decoration: none;
-	color: #444;
-	-webkit-transition: all .3s ease-in;
-	-moz-transition: all .3s ease-in;
-	-o-transition: all .3s ease-in;
-	-ms-transition: all .3s ease-in;
-	transition: all .3s ease-in;
+  text-decoration: none;
+  color: #444;
+  -webkit-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  -ms-transition: all .3s ease-in;
+  transition: all .3s ease-in;
 }
 
 a:hover {
-    text-decoration: none;
-    color: #cf8a05;
+  text-decoration: none;
+  color: #cf8a05;
 }
 
 section {
-	border-top: 1px solid #232c31;
-	padding: 20px 0 0;
+  border-top: 1px solid #232c31;
+  padding: 20px 0 0;
 }
 
 section:first-child {
-	border-top: 0;
+  border-top: 0;
 }
 
 section:last-child {
-	padding: 20px 0 20px;
+  padding: 20px 0 20px;
 }
 
 .sectionTitle {
-	float: left;
-	width: 22.5%;
+  float: left;
+  width: 22.5%;
 }
 
 .sectionContent {
-	float: right;
-	width: 75%;
+  float: right;
+  width: 75%;
 }
 
 .sectionTitle h1 {
-	font-family: 'Source Serif Pro', Helvetica, Arial, sans-serif;
-    font-style: italic; 
-	font-size: 1.4em;
-	color: #307499;
+  font-family: 'Source Serif Pro', Helvetica, Arial, sans-serif;
+  font-style: italic; 
+  font-size: 1.4em;
+  color: #307499;
 }
 
 .sectionContent h2 {
-	font-family: 'Source Serif Pro', Helvetica, Arial, sans-serif;
-	font-size: 1.10em;
-	margin-bottom: 0px;
+  font-family: 'Source Serif Pro', Helvetica, Arial, sans-serif;
+  font-size: 1.10em;
+  margin-bottom: 0px;
 }
 
 .subDetails {
-	font-size: 0.85em;
-	margin-bottom: 12px;
-    color: #666;
+  font-size: 0.85em;
+  margin-bottom: 12px;
+  color: #666;
 }
 
 .subDetails a {
-    color: #666;
+  color: #666;
+}
+
+.myName {
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-style: dashed;
 }
 
 .subDetails a:hover {
-    text-decoration: none;
-    color: #cf8a05;
+  text-decoration: none;
+  color: #cf8a05;
 }
 
 @media all and (min-width: 676px) and (max-width: 750px) {
-	.sectionTitle h1 {
-        font-size: 1.20em;
-	}
+  .sectionTitle h1 {
+    font-size: 1.20em;
+  }
 }
 
 @media all and (max-width: 675px) {
-	#cv {
-		width: 95%;
-		margin: 10px auto;
-		min-width: 280px;
-	}
-	
-	#headshot {
-		display: none;
-	}
-	
-	#name, #contactDetails {
-		float: none;
-		width: 100%;
-		text-align: center;
-	}
-	
-	.sectionTitle, .sectionContent {
-		float: none;
-		width: 100%;
-	}
-	
-	.sectionTitle {
-		margin-left: -2px;
-		margin-bottom: 5px;
-	}
+  #cv {
+    width: 95%;
+    margin: 10px auto;
+    min-width: 280px;
+  }
+
+  #headshot {
+    display: none;
+  }
+
+  #name, #contactDetails {
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  .sectionTitle, .sectionContent {
+    float: none;
+    width: 100%;
+  }
+
+  .sectionTitle {
+    margin-left: -2px;
+    margin-bottom: 5px;
+  }
 }
 
 @media all and (max-width: 480px) {
-	.mainDetails {
-		padding: 15px 15px;
-	}
-	
-	section {
-		padding: 15px 0 0;
-	}
-	
-	#mainArea {
-		padding: 0 25px;
-	}
+  .mainDetails {
+    padding: 15px 15px;
+  }
 
-	#name h1 {
-		line-height: .8em;
-		margin-bottom: 4px;
-	}
+  section {
+    padding: 15px 0 0;
+  }
+
+  #mainArea {
+    padding: 0 25px;
+  }
+
+  #name h1 {
+    line-height: .8em;
+    margin-bottom: 4px;
+  }
 }
 
 @media print {
-    #cv {
-        width: 100%;
-    }
+  #cv {
+    width: 100%;
+  }
 }
