@@ -60,7 +60,7 @@ p {
 }
 
 #headshot {
-  width: 12.5%;
+  width: 18.0%;
   float: left;
   margin-right: 30px;
 }
@@ -68,8 +68,8 @@ p {
 #headshot img {
   width: 100%;
   height: auto;
-  -webkit-border-radius: 50px;
-  border-radius: 50px;
+  -webkit-border-radius: 80px;
+  border-radius: 80px;
 }
 
 #name {
