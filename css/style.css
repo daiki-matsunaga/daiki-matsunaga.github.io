@@ -106,6 +106,10 @@ a:hover {
   color: #cf8a05;
 }
 
+i {
+  font-style: italic;
+}
+
 section {
   border-top: 1px solid #232c31;
   padding: 20px 0 0;
