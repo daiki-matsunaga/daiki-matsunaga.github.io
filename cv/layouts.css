@@ -1,0 +1,223 @@
+/* Shared elements of the four static CV layouts. */
+.nav-band, .folio-rail, .chronicle-cover { color: var(--paper); background: var(--navy); }
+.folio main, .leaves > section { min-width: 0; }
+.folio .spread, .journal #publications, .diptych .spread { display: block; }
+.folio .section-intro, .journal #publications .section-intro, .diptych .section-intro {
+  position: static;
+  margin-bottom: 1rem;
+}
+.folio .section-links, .journal .section-links, .diptych .section-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem 1.1rem;
+  margin-top: .4rem;
+  padding: 0;
+  border: 0;
+}
+.journal-title .affiliation, .leaf-profile .affiliation { color: var(--muted); }
+.journal-title .profiles img, .leaf-profile .profiles img { filter: brightness(0); opacity: .8; }
+.journal-title .profiles, .chronicle-title .profiles, .leaf-profile .profiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.1rem;
+  padding: 0;
+}
+.cv-section .catalogue { border-bottom-color: var(--rule); }
+
+/* Folio: a standing navy profile beside the bibliography. */
+.folio {
+  display: grid;
+  grid-template-columns: clamp(16.5rem, 27vw, 23.5rem) minmax(0, 1fr);
+}
+.folio-rail { grid-column: 1; grid-row: 1 / 3; }
+.rail-sheet {
+  position: sticky;
+  top: 0;
+  max-height: 100vh;
+  overflow: auto;
+  padding: clamp(2.4rem, 5vw, 4.5rem) clamp(1.5rem, 2.9vw, 3rem);
+}
+.rail-sheet .portrait { width: 7rem; }
+.rail-sheet h1 { margin: 1.3rem 0 .6rem; font-size: clamp(2.35rem, 3.7vw, 3.1rem); }
+.rail-sheet .profiles { margin-block: 1.2rem 1.65rem; padding: 0; }
+.rail-sheet nav { display: grid; gap: .35rem; font-size: 1.13rem; }
+.rail-sheet nav a { width: fit-content; text-decoration-color: #788da4; }
+.folio main, .folio footer { grid-column: 2; }
+.folio .wrap { width: min(86%, 57rem); }
+.folio #publications { padding-top: clamp(2.4rem, 5vw, 4.5rem); }
+.folio .section-intro h2 { font-size: clamp(2.4rem, 3.7vw, 3.25rem); }
+.folio .contact-grid { display: block; }
+.folio .contact-grid h2 { margin-bottom: .8rem; }
+
+/* Journal: centered title page and a two-column contents list. */
+.journal-title {
+  text-align: center;
+  padding-block: 1.5rem 1rem;
+  border-bottom: 3px double var(--ink);
+}
+.journal-title .portrait { width: 5.8rem; margin: 0 auto .65rem; }
+.journal-title h1 { margin-bottom: .22rem; }
+.journal-title .profiles { justify-content: center; margin-top: .25rem; }
+.journal #publications { padding-top: 1.4rem; }
+.journal #publications .section-intro {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: .45rem 1.2rem;
+  margin-bottom: .75rem;
+}
+.journal .papers {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(1.5rem, 4vw, 3.5rem);
+  padding-left: 0;
+}
+.journal .papers > li { margin-left: 1.85rem; padding-block: .9rem; }
+.journal .papers > li:nth-child(2) { border-top: 0; }
+.journal .pub-group h3 { font-size: 1.23rem; }
+
+/* Chronicle: a compact nameplate followed by a dated academic record. */
+.chronicle .wrap { width: min(90%, 72rem); }
+.chronicle-title {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2rem;
+  align-items: center;
+  padding-block: 2rem .45rem;
+}
+.chronicle-title h1 { margin-bottom: .35rem; }
+.chronicle-title .profiles { margin-top: .4rem; }
+.chronicle-title .portrait { grid-area: auto; width: 7.8rem; border-radius: 3px; }
+.chronicle-cover nav { display: flex; flex-wrap: wrap; gap: 0 1.8rem; }
+.chronicle-cover nav a { display: flex; align-items: center; min-height: 44px; text-underline-offset: .3em; }
+.chronicle .cv-section { background-color: var(--paper); }
+.chronicle .cv-section .spread { grid-template-columns: minmax(12rem,.7fr) minmax(0,2fr); }
+.timeline-group {
+  --date-width: clamp(7.2rem, 11vw, 9.3rem);
+  --axis-x: calc(var(--date-width) + .6rem);
+  --dot-center: 1.06rem;
+}
+.chronicle .timeline-group {
+  border-top: 1px solid var(--ink);
+  padding-block: .7rem 1rem;
+}
+.timeline-group h3 { margin-bottom: .7rem; font: 500 1.43rem var(--serif); }
+.timeline-group .records li {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--date-width) minmax(0, 1fr);
+  column-gap: 2rem;
+  padding-block: .4rem .8rem;
+  border: 0;
+}
+.timeline-group li::before, .timeline-group li::after {
+  content: "";
+  position: absolute;
+  left: var(--axis-x);
+  transform: translateX(-50%);
+}
+/* Each segment reaches the next dot even when a record wraps. */
+.timeline-group li::before {
+  top: var(--dot-center);
+  height: 100%;
+  border-left: 1px solid #aebfca;
+}
+.timeline-group li:last-child::before { height: auto; bottom: .95rem; }
+:is(.folio, .diptych) #education li:last-child::before { content: none; }
+.timeline-group li::after {
+  top: calc(var(--dot-center) - .22rem);
+  width: .44rem;
+  height: .44rem;
+  border-radius: 50%;
+  background: #496680;
+}
+.timeline-group .dates { grid-column: 1; grid-row: 1 / span 2; padding-top: .19rem; }
+.timeline-group h4, .timeline-group h4 + p { grid-column: 2; }
+
+/* Diptych: profile and appointments on one leaf, publications on the other. */
+.diptych .leaves {
+  display: grid;
+  grid-template-columns: minmax(18rem, .92fr) minmax(0, 1.7fr);
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "profile publications" "career publications";
+  --leaf-padding: clamp(1.25rem, 2.75vw, 2.65rem);
+}
+.leaf-profile {
+  grid-area: profile;
+  background-color: #e4ecef;
+  padding: 1.8rem var(--leaf-padding) 1.15rem;
+}
+.leaf-profile .portrait { width: 6.2rem; border-radius: .2rem; margin-bottom: .85rem; }
+.leaf-profile h1 { margin-bottom: .35rem; font-size: clamp(1.95rem, 2.7vw, 2.6rem); }
+.leaf-profile .profiles { margin-top: .5rem; gap: 0 .85rem; }
+.leaf-profile .profiles a { gap: .35rem; }
+.leaf-profile .profiles img { width: 1.18rem; height: 1.18rem; }
+.diptych #publications {
+  grid-area: publications;
+  width: 100%;
+  padding: 1.8rem 0 2rem var(--leaf-padding);
+  border-left: 3px double var(--rule);
+}
+.diptych .cv-section {
+  grid-area: career;
+  background-color: #e4ecef;
+  background-image: none;
+  border: 0;
+  padding: 0 var(--leaf-padding) 2rem;
+}
+.diptych .cv-section .wrap { width: 100%; padding: 1.1rem 0 0; border-top: 1px solid var(--rule); }
+.diptych .cv-section h2 { font-size: 1.8rem; }
+.diptych .cv-section summary { font-size: 1.22rem; }
+.diptych .records h4 { font-size: 1.13rem; }
+.diptych .cv-section .section-intro { margin-bottom: .55rem; }
+.diptych .cv-section .catalogue { container: career / inline-size; }
+
+/* In a narrow leaf, stack the date above the role beside the same line. */
+@container career (max-width: 22rem) {
+  .timeline-group { --axis-x: .25rem; }
+  .timeline-group .records li { display: block; padding-inline-start: 1.25rem; }
+}
+
+@media (max-width: 54rem) {
+  .diptych .leaves { width: 94%; grid-template-columns: minmax(14rem, .92fr) minmax(0, 1.6fr); }
+  .diptych .leaf-profile .profiles { display: block; }
+}
+@media (max-width: 44rem) {
+  .folio { display: block; }
+  .rail-sheet { position: static; max-height: none; padding: 1.5rem 5%; }
+  .rail-sheet .portrait { float: right; width: 4.8rem; margin-left: .7rem; }
+  .rail-sheet h1 { margin: .3rem 0 .5rem; font-size: 2rem; }
+  .rail-sheet .profiles { clear: both; display: flex; flex-wrap: wrap; gap: 0 .75rem; margin: .6rem 0 .3rem; }
+  .rail-sheet nav { display: flex; flex-wrap: wrap; gap: .2rem 1.2rem; font-size: 1rem; }
+  .rail-sheet nav a { padding-block: .55rem; }
+  .folio .wrap { width: 90%; }
+  .folio #publications { padding-top: 1.7rem; }
+  .journal .papers { display: block; }
+  .journal .papers > li:nth-child(2) { border-top: 1px solid #d7dfe2; }
+  .journal-title { padding-top: 1.3rem; }
+  .journal-title .profiles { gap: 0 .65rem; }
+  .chronicle-title { gap: 1rem; padding-top: 1.25rem; }
+  .chronicle-title .portrait { width: 4.5rem; align-self: start; }
+  .chronicle-title .profiles { gap: 0 .7rem; }
+  .chronicle .cv-section .spread, .diptych .leaves { display: block; }
+  .chronicle .cv-section .section-intro { margin-bottom: .85rem; }
+  .timeline-group { --date-width: 5.5rem; }
+  .timeline-group .records li { column-gap: 1.4rem; }
+  .diptych .leaves { width: 100%; }
+  .leaf-profile, .diptych #publications, .diptych .cv-section { padding: 1.5rem 5%; border-left: 0; }
+  .leaf-profile .portrait { float: right; width: 4.5rem; margin: 0 0 .5rem .65rem; }
+  .diptych .leaf-profile .profiles { clear: both; display: flex; }
+  .diptych .cv-section .wrap { padding: 0; border-top: 0; }
+}
+@media print {
+  .folio, .diptych .leaves, .journal .papers { display: block; }
+  .folio .wrap, .journal .wrap, .chronicle .wrap, .diptych .wrap { width: 100%; }
+  .folio-rail, .chronicle-cover, .leaf-profile, .diptych .cv-section { color: black; background: white; }
+  .rail-sheet { position: static; max-height: none; overflow: visible; padding: 0; }
+  .rail-sheet nav, .chronicle-cover nav, .journal-title .profiles,
+  .leaf-profile .profiles, .chronicle-title .profiles, .rail-sheet .profiles { display: none; }
+  .folio-rail .affiliation, .chronicle-cover .affiliation { color: black; }
+  .diptych #publications, .diptych .cv-section, .leaf-profile { padding: .7rem 0; border: 0; }
+  .journal-title, .chronicle-title { padding-block: .5rem; }
+}
